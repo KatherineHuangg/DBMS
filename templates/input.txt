@@ -1,0 +1,41 @@
+select:
+    SELECT * FROM doctor WHERE dno = 1
+
+insert:
+    INSERT INTO doctor(did,sex,year,name,dno) VALUES("S1243658790","M",11,"Hi",3)
+
+delete:
+    delete from doctor where dnum = 11
+
+update:
+    update doctor set name = "Yo" where name = "Hi"
+
+in:
+    SELECT * FROM doctor WHERE year in (1,2,3)
+
+not in:
+     SELECT * FROM doctor WHERE year not in (1,2,3)
+
+exist:
+    SELECT * FROM doctor WHERE EXISTS (select * from nurse where doctor.name = nurse.name)
+    
+not_exist:
+    SELECT * FROM doctor WHERE NOT EXISTS (select * from nurse where doctor.name = nurse.name)
+
+count:
+    SELECT COUNT(*) FROM doctor 
+
+sum:
+    SELECT SUM(dnum) FROM doctor
+
+max:
+    SELECT MAX(year) FROM doctor
+
+min:
+    SELECT MIN(year) FROM doctor
+
+avg:
+    SELECT AVG(year) FROM doctor
+
+having:
+    SELECT MIN(year) FROM doctor GROUP BY dno HAVING dno = 1

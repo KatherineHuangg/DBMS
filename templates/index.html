@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css' integrity='sha512-vxhcSRMDjtLpgTL/8uRKEjhCh8YyDER14SFb9cuceRmefufcZBweOJuQJ70JYRZiq+QhpaTM3zDw9YSOPbqtFQ==' crossorigin='anonymous'/>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="text-left" style="margin: 5px;">
+            <div style="border:5px #4572c7 solid; margin-bottom: 30px;">
+                <div style="margin: 5px;">
+                    <span>Instruction</span>
+                    <select  id="inst_name">
+                        <option value="SELECT" >Select</option>
+                        <option value="INSERT">Insert</option>
+                        <option value="DELETE">Delete</option>
+                        <option value="UPDATE">Update</option>
+                    </select>
+                    <br>
+                    <span>Table</span>
+                    <select  id="table_name">
+                        <option value="doctor" >醫生</option>
+                        <option value="nurse">護士</option>
+                        <option value="patient">病人</option>
+                        <option value="deskstaff">櫃台人員</option>
+                        <option value="department">科別</option>
+                        <option value="look">看診</option>
+                        <option value="register">掛號</option>
+                        <option value="money">付款</option>
+                    </select>
+                </div>
+                <div style="margin: 5px;">
+                    <span">Where(exists, not exists)</span>
+                    <select  id="table_item">
+                        <option value="dnum" >醫生編號</option>
+                        <option value="did">ID</option>
+                        <option value="sex">生理性別</option>
+                        <option value="year">資歷</option>
+                        <option value="name" >姓名</option>
+                        <option value="dno" >科別</option>
+                        <option value="exist" >exist</option>
+                        <option value="nexist" >not_exist</option>
+                    </select>
+                    <input type="text" id="item_value">
+                    <br>
+                    <div id="update">
+                        <span>Update Value</span>
+                        <select  id="update_table">
+                            <option value="year">資歷</option>
+                            <option value="name">姓名</option>
+                            <option value="dno">科別</option>
+                        </select>
+                        <input type="text" id="item_update">
+                    </div>
+                    <div id="insert" >
+                        <span id="insert_title">IN, NOT IN, Insert Value (ID, 生理性別, 資歷, 姓名, 科別)</span>
+                        <br>
+                        <input type="text" id="item1">
+                        <input type="text" id="item2">
+                        <input type="text" id="item3">
+                        <input type="text" id="item4">
+                        <input type="text" id="item5">
+                    </div>
+                </div>
+                <div style="margin: 10px;">
+                    <button id="item_search">執行</button>
+                    <button id="in_search">[in]執行</button>
+                    <button id="not_in_search">[not in]執行</button>
+                    <button id="exist_search">[exist]執行</button>
+                    <button id="not_exist_search">[not exist]執行</button>
+                    <button id="count_search">[count]執行</button>
+                    <button id="sum_search">[sum]執行</button>
+                    <button id="max_search">[max]執行</button>
+                    <button id="min_search">[min]執行</button>
+                    <button id="avg_search">[avg]執行</button>
+                    <button id="having_search">[having]執行</button>
+                </div>
+            </div>
+            <div style="border:5px #4572c7 solid;">
+                <div style="margin: 20px;">
+                    <span >SQL</span>
+                    <input type="text" id="sql_value" style="width: 800px;">
+                    <div style="margin: 20px;" class="text-center">
+                        <button id="sql_search">提交</button>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:40px; border:5px #4572c7 solid;">
+                <div class="container" id="list">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2" id="col-1">醫生編號</div>
+                        <div class="col-lg-2 col-md-2" id="col-2">ID</div>
+                        <div class="col-lg-2 col-md-2" id="col-3">生理性別</div>
+                        <div class="col-lg-2 col-md-2" id="col-4">資歷</div>
+                        <div class="col-lg-2 col-md-2" id="col-5">姓名</div>
+                        <div class="col-lg-2 col-md-2" id="col-6">科別</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>
